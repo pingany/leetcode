@@ -16,7 +16,9 @@ def f(a,target):
         for j in xrange(i+1, n-2):
             if j > i+1 and a[j] == a[j-1]:
                 continue
-            for h in xrange(j+1, n-1):
+            h = j+1-1
+            while h < n-1-1:
+                h += 1
                 if h > j+1 and a[h] == a[h-1]:
                     continue
                 left = target - a[i] - a[j] - a[h]
