@@ -30,6 +30,18 @@ def f(a,target):
                     break
     return result
 
+class HashableList():
+    def __init__(self, list):
+        self.list = list
+        hash = 0
+        for i in list:
+            hash = hash * 31 + i
+        self.hash = hash
+    def __hash__(self):
+        return self.hash
+
+    def __eq__(self, a):
+        return self.list == a.list
 
 def conflictPair(p1, p2):
     assert p1[1] < p1[2]
@@ -60,11 +72,13 @@ def fourSum(a, target):
             j = k
             while j < nsum and sumValues[j] == toFind:
                 if not conflictPair(sums[i], sums[j]):
-                    result.add(tuple(sorted([a[sums[i][1]], a[sums[i][2]], a[sums[j][1]], a[sums[j][2]]])))
+                    result.add(HashableList(sorted((a[sums[i][1]], a[sums[i][2]], a[sums[j][1]], a[sums[j][2]]))))
                 j+=1
         elif k == i+1:
             break
-    return [list(x) for x in sorted(result)]
+    r = ([x.list for x in result])
+    r.sort()
+    return r
 
 class Solution:
     # @return a list of lists of length 4, [[val1,val2,val3,val4]]
