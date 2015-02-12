@@ -59,15 +59,16 @@ def preOrderOut(root, results):
 from random import randint
 
 class RandomTree():
-    def __init__(self):
+    def __init__(self, maxNodes=10):
         self.val = 0
+        self.maxNodes = maxNodes
 
     def nextVal(self):
         self.val += 1
         return self.val
 
     def createTree(self):
-        if self.val > 3:
+        if self.val > self.maxNodes:
             return None
         root = randint(0, 1) and TreeNode(self.nextVal()) or None
         if root:

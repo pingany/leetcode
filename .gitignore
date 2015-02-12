@@ -1,0 +1,36 @@
+.idea
+.tags
+*.opensdf
+*.props
+*.pdb
+*.pyc
+*.sdf
+*.sln
+*.suo
+*.swp
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.xcodeproj
+*.DS_Store
+*~
+*.orig
+*.cproject
+nbproject
+output
+*.out
+*.cmake
+CMakeCache.txt
+CMakeFiles/
+Package Control.cache/
+Package Control.lastrun
+Package Control.*
+out/
+*tempfile*
+
+*.class
+*.jad
+
+# temp file created by me
+1
+2
