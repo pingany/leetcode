@@ -55,6 +55,10 @@ class TreeNode:
         self.left = left
         self.right = right
 
+    def __repr__(self):
+        return "Tree(%d, %s, %s)" % (self.val, self.left, self.right)
+        pass
+
 def inOrderOut(root, results):
     if not root:
         return results
