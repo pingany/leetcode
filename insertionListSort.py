@@ -34,6 +34,7 @@ def insertionSort(node):
         p = sortedList
         if prev is not None and prev.val <= node.val:
             p = prev
+        
         while p.next and p.next.val <= node.val:
             p = p.next
         node.next = p.next

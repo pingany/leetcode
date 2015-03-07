@@ -103,6 +103,12 @@ class RandomTree():
             root.right = self.createTree()
         return root
 
+def itToList(iterable):
+    l =[]
+    while iterable.hasNext():
+        l.append(iterable.next())
+    return l
+
 def dictTree():
     return defaultdict(dictTree)
 
