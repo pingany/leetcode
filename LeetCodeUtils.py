@@ -13,6 +13,10 @@ class ListNode:
         self.val = x
         self.next = next
 
+    def __repr__(self):
+        return "ListNode(%s, %s)" % (str(self.val), repr(self.next))
+        pass
+
 def listToNodes(l):
     if not l:
         return None
@@ -158,3 +162,19 @@ def testThis():
 
     pass
 
+class UndirectedGraphNode:
+    def __init__(self, x):
+        self.label = x
+        self.neighbors = []
+        
+class HashWrapper():
+    def __init__(self, object):
+        self.object = object
+    def __hash__(self):
+        return id(self.object)
+    def __eq__(self, a):
+        return self.object == a.object 
+        
+
+def array2(row, col, initValue=None):
+    return [[initValue for x in range(col)] for x in range(row)] 
