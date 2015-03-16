@@ -52,6 +52,15 @@ def unqiue(list):
     return sorted(set(list))
 
 
+def treeEquals(n1, n2):
+    if n1 == n2:
+        return True
+    if not n1 or not n2:
+        return False
+    if n1.val == n2.val:
+        return treeEquals(n1.left, n2.left) and treeEquals(n1.right, n1.right)
+    return False
+
 # Definition for a  binary tree node
 class TreeNode:
     def __init__(self, x, left=None, right=None):
@@ -178,3 +187,16 @@ class HashWrapper():
 
 def array2(row, col, initValue=None):
     return [[initValue for x in range(col)] for x in range(row)] 
+
+
+def removeNext(node):
+    assert node.next
+    node.next = node.next.next
+    pass
+
+def insertNode(prev, node):
+    assert prev and node
+    node.next = prev.next
+    prev.next = node
+    pass
+   

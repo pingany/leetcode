@@ -24,7 +24,6 @@ class Solution:
 
 def sp(a, results):
     k = Solution().removeDuplicates(a)
-    assert len(a) == k
     assert results == a[:k]
 
 def test():
