@@ -48,6 +48,18 @@ def listTraverse(node, n):
     return node
 
 
+def listReverse(node):
+    head = ListNode(0)
+    while node:
+        # save next
+        next = node.next
+        # insert node after head
+        node.next = head.next
+        head.next = node
+        # go to next
+        node = next
+    return head.next
+
 def unqiue(list):
     return sorted(set(list))
 
