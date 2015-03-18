@@ -70,7 +70,7 @@ def treeEquals(n1, n2):
     if not n1 or not n2:
         return False
     if n1.val == n2.val:
-        return treeEquals(n1.left, n2.left) and treeEquals(n1.right, n1.right)
+        return treeEquals(n1.left, n2.left) and treeEquals(n1.right, n2.right)
     return False
 
 # Definition for a  binary tree node
