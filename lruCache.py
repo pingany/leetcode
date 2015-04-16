@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-import os,re,sys,commands,glob,utils
-reload(sys)
-sys.setdefaultencoding("utf-8")
-
-
+import os,re,sys,commands,glob,json,collections,random
+from random import randint
+from LeetCodeUtils import *
+   
 class PriorityQueue:  
     def __init__(self):  
         self._queue = []  
@@ -44,7 +43,7 @@ class LRUCache:
             return -1
         item = self.map[key]
         self.priorityUp(item)
-        return item
+        return item.value
 
     def priorityUp(self, item):
         self.queue.remove(item)
